@@ -6,6 +6,12 @@ const expect = chai.expect;
 
 const KafkaToSqs = require('../..');
 
+function throwError() {
+  const err = new Error('Should not resolve');
+  err.ownError = true;
+  throw err;
+}
+
 describe('Base API Surface', function() {
   describe('Nominal behaviors', function() {
     it('should expose a constructor', function() {
@@ -22,12 +28,26 @@ describe('Base API Surface', function() {
       this.kafkaToSqs = new KafkaToSqs();
     });
     it('should not allow init without an object', function() {
-      expect(this.kafkaToSqs.init).to.throw(TypeError);
+      return this.kafkaToSqs.init()
+        .then(throwError)
+        .catch((err) => {
+          if (err.ownError) {
+            throw err;
+          }
+
+          expect(err).to.be.an.instanceof(TypeError);
+        });
     });
     it('should not allow init without anything defined', function() {
-      const kafkaInit = this.kafkaToSqs.init.bind(this.kafkaToSqs, {});
+      return this.kafkaToSqs.init({})
+        .then(throwError)
+        .catch((err) => {
+          if (err.ownError) {
+            throw err;
+          }
 
-      expect(kafkaInit).to.throw(TypeError);
+          expect(err).to.be.an.instanceof(TypeError);
+        });
     });
   });
 });
