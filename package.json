@@ -24,7 +24,10 @@
     "test": "mocha -b test/spec && eslint lib/**"
   },
   "dependencies": {
-    "bluebird": "^3.4.6"
+    "@waldo/node-kafka": "0.0.10",
+    "@waldo/sqs": "0.0.2",
+    "bluebird": "^3.4.6",
+    "cip": "^1.0.0"
   },
   "devDependencies": {
     "chai": "^3.5.0",
