@@ -12,6 +12,37 @@ npm install @waldo/kafka-to-sqs --save
 
 ## Documentation
 
+kafka-to-sqs exports a Constructor that you have to instantiate before starting the service.
+
+```js
+const KafkaToSqs = require('@waldo/kafka-to-sqs');
+
+const kafkaToSqs = new KafkaToSqs();
+```
+
+To start the service you need to invoke the `init(opts)` method on the instance:
+
+```js
+const opts = {
+    topic: 'kafka-topic',
+    consumerGroup: 'kafka-consumer-group',
+    log: logger,
+    sqsUrl: 'https://....',
+};
+
+kafkaToSqs.init(opts)
+    .then(function() {
+        console.log('Service is running');
+    });
+```
+
+The `init(opts)` returns a Bluebird Promise and requires the following options:
+
+* `topic` **String Required** The kafka topic to consume on.
+* `consumerGroup` **String Required** The kafka consumer group.
+* `log` **Object Required** An object containing the methods: info, warn, error.
+* `sqsUrl` **String Required** The url to the SQS queue.
+
 
 ## Releasing
 
