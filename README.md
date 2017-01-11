@@ -2,6 +2,8 @@
 
 > Kafka to SQS service, convert Kafka messages to SQS jobs.
 
+[![CircleCI](https://circleci.com/gh/waldophotos/node-kafka-to-sqs.svg?style=svg&circle-token=fa0cd4e293286b9953fd84482a925e360cb42845)](https://circleci.com/gh/waldophotos/node-kafka-to-sqs)
+
 ## Install
 
 Install the module using NPM:
