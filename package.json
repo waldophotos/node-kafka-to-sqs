@@ -1,6 +1,6 @@
 {
   "name": "@waldo/kafka-to-sqs",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "main": "./lib/kafka-to-sqs",
   "description": "Kafka to SQS service, convert Kafka messages to SQS jobs.",
   "homepage": "https://github.com/waldo/node-kafka-to-sqs",
