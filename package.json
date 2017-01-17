@@ -25,7 +25,7 @@
   },
   "dependencies": {
     "@waldo/node-kafka": "0.0.10",
-    "@waldo/sqs": "0.0.2",
+    "@waldo/sqs": "0.1.0",
     "bluebird": "^3.4.6",
     "cip": "^1.0.0"
   },
