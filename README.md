@@ -56,6 +56,8 @@ The `init(opts)` returns a Bluebird Promise and requires the following options:
 
 ## Release History
 
+- **v0.1.0**, *17 Jan 2017*
+    - Added `dispose()` method.
 - **v0.0.1**, *11 Jan 2017*
     - Big Bang
 
