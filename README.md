@@ -56,6 +56,8 @@ The `init(opts)` returns a Bluebird Promise and requires the following options:
 
 ## Release History
 
+- **v0.1.2**, *20 Jan 2017*
+    - Update to @waldo/node-kafka `0.1.1`.
 - **v0.1.1**, *18 Jan 2017*
     - Update to @waldo/node-kafka `0.1.0`.
 - **v0.1.0**, *17 Jan 2017*
